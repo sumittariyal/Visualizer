@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scheduling Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Adding Chart.js -->
+</head>
+<body>
+  <div class="container">
+    <h1>Scheduling Visualizer</h1>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button id="diskTab" class="active">Disk Scheduling</button>
+      <button id="jobTab">Job Scheduling</button>
+    </div>
+
+    <!-- Disk Scheduling Panel -->
+    <div id="diskPanel" class="panel">
+      <h2>Disk Scheduling</h2>
+
+      <label>Select Algorithm:</label>
+      <select id="diskAlgo">
+        <option value="fcfs">FCFS</option>
+        <option value="sstf">SSTF</option>
+        <option value="scan">SCAN</option>
+      </select>
+
+      <label>Head Position:</label>
+      <input type="number" id="headInput" value="53" />
+
+      <label>Requests (comma separated):</label>
+      <input type="text" id="requestsInput" value="98,183,37,122,14" />
+
+      <button id="diskSchedule">Schedule</button>
+      <canvas id="diskChart"></canvas> <!-- Canvas for Disk Scheduling Chart -->
+    </div>
+
+    <!-- Job Scheduling Panel -->
+    <div id="jobPanel" class="panel hidden">
+      <h2>Job Scheduling</h2>
+
+      <label>Select Algorithm:</label>
+      <select id="jobAlgo">
+        <option value="fcfs">FCFS</option>
+        <option value="sjf">SJF</option>
+        <option value="rr">Round Robin</option>
+      </select>
+
+      <div id="jobInputs"></div>
+      <button id="addJob">Add Job</button>
+      <button id="jobSchedule">Schedule</button>
+      <canvas id="jobChart"></canvas> <!-- Canvas for Job Scheduling Chart -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
